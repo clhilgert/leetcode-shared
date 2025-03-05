@@ -3,13 +3,14 @@ def subsets(nums):
     curr = []
     def helper(idx):
         # base case
+        groups.append(curr[:])
         if idx >= len(nums):
-            groups.append(curr[:])
             return
-        curr.append(nums[idx])
-        helper(idx + 1)
-        curr.pop()
-        helper(idx + 1)
+        for i in range(idx, len(nums)):
+            curr.append(nums[i])
+            helper(i + 1)
+            curr.pop()
+        # helper(i + 1)
             
     helper(0)
     return sorted(groups)
