@@ -27,7 +27,7 @@
 def best_time_to_buy(prices):
     buy_day = 0
     profit = 0
-    for sell_day in prices[1:]:
+    for sell_day in range (1, len(prices)):
         if prices[sell_day] > prices[buy_day]:
             profit = max(profit, prices[sell_day] - prices[buy_day])
         else:
