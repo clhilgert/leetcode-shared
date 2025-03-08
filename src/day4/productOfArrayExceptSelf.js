@@ -15,4 +15,4 @@ function productExceptSelf(nums) {
     return preProduct.map((elem, index) => elem * postProduct[index])
 };
 
-console.log(productExceptSelf([1,2,3,4])) // 
+console.log(productExceptSelf([1,2,3,4]))

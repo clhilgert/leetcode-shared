@@ -11,13 +11,15 @@
 # for a number left is prev res * number befor
 
 def productExceptSelf(nums):
-    res = [0] * len(nums)
+    left, right, res = [0] * len(nums), [0] * len(nums), [0] * len(nums)
     total = 1
     for i in range(len(nums) - 1, -1, -1):
-        res[i] = total
+        right[i] = total
         total *= nums[i]
     total = 1
     for i in range(len(nums)):
-        res[i] *= total
+        left[i] *= total
         total *= nums[i]
+    for i in range(len(nums)):
+        res[i] = left[i] * right[i]
     return res
