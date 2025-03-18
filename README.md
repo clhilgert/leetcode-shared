@@ -1,4 +1,7 @@
+archive of m-f mock interview group sessions  
+many contributors  
 :)
+
 
 ```bash
 python3 -m venv venv
