@@ -7,7 +7,6 @@
 
 # You must write an algorithm with O(log n) runtime complexity.
 
- 
 
 # Example 1:
 
@@ -21,7 +20,7 @@
 
 # Input: nums = [1,3,5,6], target = 7
 # Output: 4
- 
+
 
 # Constraints:
 
@@ -30,8 +29,7 @@
 # nums contains distinct values sorted in ascending order.
 # -104 <= target <= 104
 # Find the leftmost val that is >=target
-#if u use List you need import yeah, can do this too
-
+# if u use List you need import yeah, can do this too
 
 
 class Solution:
@@ -42,7 +40,7 @@ class Solution:
         while l < r:
             m = (l + r) // 2
             if nums[m] >= target:
-                index = m    
+                index = m
                 r = m
             else:
                 l = m + 1
@@ -52,12 +50,13 @@ class Solution:
 
         return index
 
+
 class Solution:
     def searchInsert(self, nums: list[int], target: int) -> int:
-        l,r = 0, len(nums)
+        l, r = 0, len(nums)
 
         while l < r:
-            m = (l+r)//2
+            m = (l + r) // 2
             if nums[m] == target:
                 r = m
 
@@ -69,11 +68,9 @@ class Solution:
 
         return l
 
-   
 
 s = Solution()
-print(s.searchInsert([1,3,5,6], 5))
-print(s.searchInsert([1,3,5,6], 2))
-print(s.searchInsert([1,3,5,6], 7))
-print(s.searchInsert([1,3,5,6], -1))
-        
+print(s.searchInsert([1, 3, 5, 6], 5))
+print(s.searchInsert([1, 3, 5, 6], 2))
+print(s.searchInsert([1, 3, 5, 6], 7))
+print(s.searchInsert([1, 3, 5, 6], -1))
