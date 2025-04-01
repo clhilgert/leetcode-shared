@@ -14,18 +14,18 @@ class Solution:
         def dfs(node):
             if not node:
                 return
-            if not node.left and node.val > val:
-                node.left = TreeNode(val)
-                return
-            elif not node.right and node.val < val:
-                node.right = TreeNode(val)
-                return
-            # go left <
-            if node.val > val:
-                dfs(node.left)
-            # go right >
-            if node.val < val:
-                dfs(node.right)
+            if val < node.val:
+                if node.left:
+                    dfs(node.left)
+                else:
+                    node.left = TreeNode(val)
+                    return
+            else:
+                if node.right:
+                    dfs(node.right)
+                else:
+                    node.right = TreeNode(val)
+                    return
 
         dfs(root)
         return root
